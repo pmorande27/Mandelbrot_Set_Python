@@ -17,15 +17,15 @@ class Mandelbrot(object):
         self.y_dimension = y_dimension
 
     def isMandelbrot(self, c):
-         iterations = 0
-         z = 0
-         magnitude = 0
-         while magnitude <= 2 and iterations < 255:
-             nextZ = z*z + c
-             magnitude = abs(nextZ)
-             z = nextZ
-             iterations += 1
-         return iterations
+        iterations = 0
+        z = 0
+        magnitude = 0
+        while magnitude <= 2 and iterations < 255:
+            nextZ = z*z + c
+            magnitude = abs(nextZ)
+            z = nextZ
+            iterations += 1
+        return iterations
 
     def printMandlebrot(self, ):
         """
@@ -40,7 +40,7 @@ class Mandelbrot(object):
         "Calculate Mandelbrot set"
         for i in range( self.x_dimension):
             for j in range( self.y_dimension):
-                resultArray[j][i] = self.isMandelbrot(complex(XX[j][i],YY[j][i]))
+                resultArray[i][j] = self.isMandelbrot(complex(XX[i][j],YY[i][j]))
         "Plot"
         plt.xlabel('x axis')
         plt.ylabel('y axis')
